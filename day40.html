@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 49</title>
+    <style>
+        
+        .container {
+            margin: auto;
+            width: 606px;
+            height: 606px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(138, 13, 13);
+            padding: 5px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .container div{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            margin: 0px;
+            filter: grayscale(100%);
+            transition: 1s;
+            padding: 1px;
+        }
+
+        
+
+        .img1 {
+            width: 100%;
+            height: auto;
+            background-image: linear-gradient(135deg, #7AC74C,#A33EA1);
+            border-radius: 5px;
+            
+        }
+
+        .img2 {
+            background-image: linear-gradient(135deg, #7AC74C,#A33EA1);
+            border-radius: 5px;
+            
+        }
+
+        .img3 {
+            background-image: linear-gradient(135deg, #7AC74C,#A33EA1);
+            border-radius: 5px;
+            
+        }
+
+        .img4 {
+            background-image: linear-gradient(135deg, #F7D02C,#F7D02C);
+            border-radius: 5px;
+            
+        }
+
+        .img5 {
+            background-image: linear-gradient(135deg, #F7D02C, #F7D02C);
+            border-radius: 5px;
+            
+        }
+        
+        .img6 {
+            background-image: linear-gradient(135deg, #F7D02C, #F7D02C);
+            border-radius: 5px;
+            
+        }
+        
+        .img7 {
+            background-image: linear-gradient(135deg, #7AC74C,#A98FF3);
+            border-radius: 5px;
+            
+        }
+        
+        .img8 {
+            background-image: linear-gradient(135deg, #7AC74C,#A98FF3);
+            border-radius: 5px;
+            
+        }
+        
+        .img9 {
+            background-image: linear-gradient(135deg, #7AC74C, #A98FF3);
+            border-radius: 5px;
+            
+        }
+        
+        .img-0 {
+            animation: small1 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-0.active {
+            position: relative;
+            animation: big1 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big1 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 33.3333333%;
+                top: 33.3333333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small1 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 33.3333333%;
+                top: 33.3333333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+        
+        .img-1 {
+            animation: small2 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-1.active {
+            position: relative;
+            animation: big2 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big2 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 0;
+                top: 33.3333333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small2 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 0;
+                top: 33.3333333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+        
+        .img-2 {
+            animation: small3 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-2.active {
+            position: relative;
+            animation: big3 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big3 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                right: 0;
+                top: 0;
+            }
+            100% {
+                right: 33.33333%;
+                top: 33.33333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small3 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                right: 33.33333%;
+                top: 33.33333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                right: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-3 {
+            animation: small4 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-3.active {
+            position: relative;
+            animation: big4 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big4 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 33.33333%;
+                top: 0;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small4 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 33.33333%;
+                top: 0;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-4 {
+            animation: small5 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-4.active {
+            position: relative;
+            animation: big5 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big5 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 0;
+                top: 0;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small5 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 0;
+                top: 0;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-5 {
+            animation: small6 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-5.active {
+            position: relative;
+            animation: big6 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big6 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                right: 0;
+                top: 0;
+            }
+            100% {
+                right: 33.333333%;
+                top: 0;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small6 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                right: 33.333333%;
+                top: 0;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                right: 0;
+                top: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-6 {
+            animation: small7 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-6.active {
+            position: relative;
+            animation: big7 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big7 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                bottom: 0;
+            }
+            100% {
+                left: 33.333333%;
+                bottom: 33.333333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small7 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 33.333333%;
+                bottom: 33.333333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                bottom: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-7 {
+            animation: small8 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-7.active {
+            position: relative;
+            animation: big8 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big8 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                left: 0;
+                bottom: 0;
+            }
+            100% {
+                left: 0;
+                bottom: 33.333333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small8 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                left: 0;
+                bottom: 33.333333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                left: 0;
+                bottom: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+        .img-8 {
+            animation: small9 .5s ease-in-out both, fromColor .5s ease-in-out forwards;
+        }
+
+        .img-8.active {
+            position: relative;
+            animation: big9 .5s ease-in-out both, toColor .5s ease-in-out forwards;
+        }
+
+        @keyframes big9 {
+            0%,1% {
+                transform: scale(1);
+                z-index: 2;
+                right: 0;
+                bottom: 0;
+            }
+            100% {
+                right: 33.333333%;
+                bottom: 33.333333%;
+                z-index: 2;
+                transform: scale(3.065);
+            }
+        }
+        
+        @keyframes small9 {
+            0% {
+                transform: scale(3.065);
+                z-index: 2;
+                right: 33.333333%;
+                bottom: 33.333333%;
+            }
+            99% {
+                z-index: 2;
+                transform: scale(1);
+                right: 0;
+                bottom: 0;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+
+
+
+
+
+
+
+
+        @keyframes toColor {
+            0%{
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+            }
+            50%{
+                filter: grayscale(50%);
+                -webkit-filter: grayscale(50%);
+            }
+            100%{
+                filter: grayscale(0%);
+                -webkit-filter: grayscale(0%);
+            }
+        }
+
+            @keyframes fromColor{
+                0%{
+                filter: grayscale(0%);
+                -webkit-filter: grayscale(0%);
+            }
+            50%{
+                filter: grayscale(50%);
+                -webkit-filter: grayscale(50%);
+            }
+            100%{
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+            }
+        }
+        
+        
+       
+    </style>
+    
+   
+</head>
+<body>
+    <div class="container">
+        <div class='img-0'>
+            <img class="img1" src="./img/069.png">
+        </div>
+        <div class='img img-1'>
+            <img src="./img/070.png" class="img2" width="100%" height="100%">
+        </div>
+        <div class='img img-2'>
+            <img src="./img/071.png" class="img3" width="100%" height="100%">
+        </div>
+        <div class='img img-3'>
+            <img src="./img/179.png" class="img4" width="100%" height="100%">
+        </div>
+        <div class='img img-4'>
+            <img src="./img/180.png" class="img5" width="100%" height="100%">
+        </div>
+        <div class='img img-5'>
+            <img src="./img/181.png" class="img6" width="100%" height="100%">
+        </div>
+        <div class='img img-6'>
+            <img src="./img/187.png" class="img7" width="100%" height="100%">
+        </div>
+        <div class='img img-7'>
+            <img src="./img/188.png" class="img8" width="100%" height="100%">
+        </div>
+        <div class='img img-8'>
+            <img src="./img/189.png" class="img9" width="100%" height="100%">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"  ></script>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+</html>
